@@ -65,7 +65,8 @@ def promote(candidate: dict) -> None:
     ARTIFACTS.mkdir(exist_ok=True)
     joblib.dump(model, ARTIFACTS / "model.joblib")
     meta = {
-        "model_version": os.getenv("GIT_SHA", "local")[:7],  # the Dockerfile overwrites this with the image's commit
+        "model_version": os.getenv("GIT_SHA", "local")[:7],
+        "git_sha": os.getenv("GIT_SHA", "local"),
         "mlflow_run_id": candidate["run_id"],
         "mlflow_model_version": int(version.version),
         "model": candidate["model"],
