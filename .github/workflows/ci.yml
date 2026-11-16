@@ -1,4 +1,4 @@
-# Lab 2: test every pull request; on main, build, smoke-test, scan and publish the image.
+# Lab 3: test every pull request; on main, build, smoke-test, scan and publish the image.
 # Every third-party action is pinned to a full commit SHA (tags can be moved: see the Trivy
 # compromise of March 2026). Update pins on purpose, never by accident.
 name: ci

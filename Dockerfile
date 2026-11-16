@@ -12,7 +12,7 @@ ARG GIT_SHA=local
 # Lab 2: artifacts/ is empty, so the image trains the model itself.
 RUN if [ -f artifacts/model.joblib ]; then \
       mkdir -p models && cp artifacts/model.joblib artifacts/metadata.json models/ && \
-      python -c "import json,sys; p='models/metadata.json'; m=json.load(open(p)); m['model_version']=sys.argv[1][:7]; json.dump(m,open(p,'w'))" "$GIT_SHA"; \
+      python -c "import json,sys; p='models/metadata.json'; m=json.load(open(p)); m['model_version']=sys.argv[1][:7]; m['git_sha']=sys.argv[1]; json.dump(m,open(p,'w'))" "$GIT_SHA"; \
     else \
       GIT_SHA=$GIT_SHA python -m src.train.train; \
     fi
