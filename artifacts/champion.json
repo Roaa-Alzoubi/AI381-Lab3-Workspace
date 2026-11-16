@@ -1,1 +1,12 @@
-{"model_version": "local", "mlflow_run_id": "187030e55cdb44aa9b34fe63c191563e", "mlflow_model_version": 1, "model": "logreg", "data_sha256": "76a6447e764b", "auc": 0.798, "f1": 0.495, "p95_latency_ms": 7.62, "trained_at": "2026-11-15T21:32:21+00:00"}
+{
+  "model_version": "local",
+  "git_sha": "local",
+  "mlflow_run_id": "c0e9ae111612423b97810ff66e5a50e5",
+  "mlflow_model_version": 2,
+  "model": "logreg_balanced",
+  "data_sha256": "76a6447e764b",
+  "auc": 0.797,
+  "f1": 0.589,
+  "p95_latency_ms": 7.66,
+  "trained_at": "2026-11-16T17:10:55+00:00"
+}
