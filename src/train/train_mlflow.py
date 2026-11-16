@@ -24,7 +24,6 @@ import numpy as np
 import pandas as pd
 from mlflow.models import infer_signature
 from sklearn.compose import ColumnTransformer
-from sklearn.ensemble import GradientBoostingClassifier, RandomForestClassifier
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import f1_score, roc_auc_score
 from sklearn.model_selection import train_test_split
@@ -51,16 +50,7 @@ def preprocessing() -> ColumnTransformer:
 # TODO 1: choose at least three candidates and justify them in MODEL_SELECTION.md.
 # Change the settings, not just the names: a different model family or a clearly different setting each time.
 CANDIDATES = {
-    "logreg_balanced": LogisticRegression(
-        C=1, class_weight="balanced", max_iter=2000
-    ),
-    "rf_balanced_50": RandomForestClassifier(
-        n_estimators=50, max_depth=8,
-        class_weight="balanced_subsample", random_state=42
-    ),
-    "gb_100": GradientBoostingClassifier(
-        n_estimators=100, learning_rate=0.05, random_state=42
-    ),
+    "logreg_weak": LogisticRegression(C=0.00001, max_iter=1000),
 }
 
 
